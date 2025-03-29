@@ -1,0 +1,135 @@
+@import "tailwindcss";
+@import "swiper/css";
+@import "swiper/css/navigation";
+
+/* generic */
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e92724;
+    border-radius: 3px;
+}
+
+/* container */
+.customContainer {
+    width: 75%;
+    margin: 0 auto;
+}
+
+@media (max-width: 1240px) {
+    .customContainer {
+        width: 95%;
+    }
+}
+
+@media (min-width: 1400px) {
+    .customContainer {
+        width: 1000px;
+    }
+}
+
+/* button style */
+button {
+    cursor: pointer !important;
+}
+
+.btn {
+    padding: 5px 18px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* main bg img */
+.main {
+    background: url(./assets/img/bg.avif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* animation cards */
+.animate-img-left {
+    animation: left-card 2s ease-in 3s infinite alternate-reverse;
+}
+
+@keyframes left-card {
+    0% {
+        transform: translateX(0px);
+    }
+    66% {
+        transform: translateX(8px);
+    }
+    100% {
+        transform: translateX(8px);
+    }
+}
+
+.animate-img-right {
+    animation: right-card 2s ease-in 3s infinite alternate-reverse;
+}
+
+@keyframes right-card {
+    0% {
+        transform: translateX(0px);
+    }
+    66% {
+        transform: translateX(-8px);
+    }
+    100% {
+        transform: translateX(-8px);
+    }
+}
+
+/* section title style */
+.title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #0d1c23;
+}
+
+.starAnim {
+    animation: starPulse 4s ease-in-out infinite alternate;
+    transform-origin: center;
+    will-change: transform;
+}
+
+@keyframes starPulse {
+    0% {
+        transform: scale(0.8) rotate(0deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.3) rotate(180deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5) rotate(360deg);
+        opacity: 0.8;
+    }
+}
+
+.priceAnim {
+    animation: priceAnim 4s ease-in-out infinite alternate;
+    transform-origin: center;
+    will-change: transform;
+}
+
+@keyframes priceAnim {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(15px);
+    }
+}
